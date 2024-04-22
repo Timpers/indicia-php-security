@@ -17,7 +17,7 @@ class SecurityHeaders
     {
      $response = $next($request);
      $response->headers->set('x-test-header', "This is a test");
-     $response->headers->set('Content-Security-Policy', "default-src 'self'; script-src 'self'; frame-src 'none';style-src 'self' 'unsafe-inline' https://laravel.com https://fonts.bunny.net; img-src 'self' https://laravel.com; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; block-all-mixed-content; upgrade-insecure-requests;");    
+     $response->headers->set('Content-Security-Policy', "default-src 'self'; script-src 'self'; frame-src 'none';style-src 'self' 'unsafe-inline' https://laravel.com https://fonts.bunny.net; img-src 'self' https://laravel.com; font-src 'self' https://fonts.bunny.net; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; block-all-mixed-content; upgrade-insecure-requests;");    
      $response->headers->set('X-Content-Type-Options', 'nosniff');
      $response->headers->remove('X-Test-Header');
      $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
